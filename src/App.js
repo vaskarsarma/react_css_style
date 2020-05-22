@@ -60,16 +60,8 @@ class App extends Component {
   }
 
   render() {
-    const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer'
-    };
-
     let person= null;
+    let btnclass='';
 
     if(this.state.showPerson){
       person=(
@@ -89,7 +81,9 @@ class App extends Component {
           </div>
       );
 
-      style.backgroundColor= 'red';
+      //style.backgroundColor= 'red';
+
+      btnclass=classes.red;
     }
 
     const assignedClasses=[];
@@ -109,7 +103,7 @@ class App extends Component {
         {/* Bind is good for performance */}
         {/* <button style={style} onClick={this.switcNamehHandler.bind(this, "test1")}>Switch Person</button> */}
         {/* Toggle Persson Div */}
-        <button style={style} onClick={this.toggleNameHandler}>Toggle Person</button>
+        <button className={btnclass} onClick={this.toggleNameHandler}>Toggle Person</button>
         {person}        
       </div>
     )
